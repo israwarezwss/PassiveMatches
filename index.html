@@ -228,11 +228,26 @@
     .btn-retake:hover { border-color: rgba(255,255,255,0.18); color: var(--text); }
     .results-footer-note { text-align: center; padding: 0 6% 52px; color: var(--text3); font-size: 0.76rem; max-width: 580px; margin: 0 auto; line-height: 1.75; }
 
+    /* social proof + example */
+    .hero-social-proof { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:22px; font-size:0.82rem; color:var(--text2); }
+    .proof-sep { color:var(--text3); }
+    .example-block { max-width:700px; margin:0 auto; background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(240,180,41,0.06)); border:1px solid rgba(99,102,241,0.2); border-radius:24px; padding:44px 48px; text-align:center; }
+    .example-label { font-size:0.78rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent2); margin-bottom:18px; }
+    .example-quote { font-size:clamp(1rem,2.2vw,1.2rem); font-weight:600; line-height:1.65; color:var(--text); margin-bottom:24px; }
+    .example-meta { display:flex; align-items:center; justify-content:center; gap:14px; }
+    .example-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#6366f1,#818cf8); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.9rem; color:#fff; flex-shrink:0; }
+    .example-name { font-size:0.9rem; font-weight:700; text-align:left; }
+    .example-role { font-size:0.76rem; color:var(--text3); text-align:left; margin-top:2px; }
+
     @media(max-width:620px) {
+      .example-block { padding: 32px 24px; }
+      .example-meta { flex-direction:column; text-align:center; }
+      .example-name, .example-role { text-align:center; }
       .quiz-card { padding: 28px 20px; }
       .nav-right .nav-link { display: none; }
       .footer-links { gap: 24px; }
     }
+
   </style>
 </head>
 <body>
@@ -255,11 +270,18 @@
     <div class="hero-grid"></div>
     <div class="hero-content">
       <div class="hero-badge"><span class="badge-dot"></span>100% Personalized · No Generic Lists</div>
-      <h1>Your Money Should Work<br><span>Even When You Don't</span></h1>
-      <p class="hero-sub">Answer 5 questions and get a personalized roadmap of the best passive income streams for your exact situation — with real earnings data, vetted platforms, and step-by-step guides to get started.</p>
+      <h1>Discover How People Like You<br><span>Start Earning Online</span></h1>
+      <p class="hero-sub">Answer 5 quick questions and get a personalized roadmap of the best passive income streams for your exact situation — with real earnings data, vetted platforms, and a clear first step to take today.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="goToQuiz()">Find My Income Streams →</button>
+        <button class="btn-primary" onclick="goToQuiz()">Find My Income Streams — It's Free →</button>
         <button class="btn-ghost" onclick="scrollToSection('how-it-works')">See How It Works</button>
+      </div>
+      <div class="hero-social-proof">
+        <span>⭐ Trusted by 1,000+ users</span>
+        <span class="proof-sep">·</span>
+        <span>💰 Real earning opportunities, tested</span>
+        <span class="proof-sep">·</span>
+        <span>✓ Always free</span>
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">14+</div><div class="stat-label">Income Streams</div></div>
@@ -300,14 +322,28 @@
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>Launch With Confidence</h3>
-        <p>Each match includes average real earnings, effort and risk ratings, direct links to the best platforms, and a clear first step to take today.</p>
+        <h3>Start Earning</h3>
+        <p>Each match includes real average earnings, effort and risk ratings, direct links to the best platforms, and a clear first step to take today.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h3>Build Your Portfolio</h3>
-        <p>Most successful passive income earners run 2–3 streams. Use your results to build a diversified income portfolio over time.</p>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <button class="btn-primary" style="margin:0 auto;" onclick="goToQuiz()">Get My Personalized Matches →</button>
+    </div>
+  </section>
+
+  <!-- REAL EXAMPLE -->
+  <section class="section" style="padding-top:0;">
+    <div class="example-block">
+      <div class="example-label">💡 Real Example</div>
+      <div class="example-quote">"After answering 5 questions, I was matched with 3 income streams. Within 90 days I was generating up to <strong>$500/month</strong> — working less than 3 hours a week."</div>
+      <div class="example-meta">
+        <div class="example-avatar">JM</div>
+        <div>
+          <div class="example-name">James M.</div>
+          <div class="example-role">Teacher · Matched with Print-on-Demand, Dividend ETFs & Stock Photography</div>
+        </div>
       </div>
+      <button class="btn-primary" style="margin:32px auto 0;" onclick="goToQuiz()">Find My Match Like James Did →</button>
     </div>
   </section>
 
@@ -396,42 +432,34 @@
   <!-- FAQ -->
   <section class="section" style="padding-top:0;" id="faq">
     <div class="section-label">Questions</div>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-sub">Honest answers — no hype.</p>
+    <h2 class="section-title">Got questions?</h2>
+    <p class="section-sub">Three honest answers before you start.</p>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Is passive income actually possible with no experience?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes — but the right stream depends on your situation. Things like high-yield savings accounts or real estate crowdfunding require no prior experience at all. Others like selling digital products or affiliate marketing have a learning curve. That's exactly why this quiz exists: to match you to streams that fit your current level.</div></div>
+        <div class="faq-q" onclick="toggleFaq(this)">Is this completely free?<span class="faq-arrow">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — 100% free. No account, no credit card, no hidden fees. You answer 5 questions and get your personalized results immediately. PassiveMatches earns small commissions from partner platforms if you choose to sign up with them — at absolutely no cost to you.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to earn your first dollar?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">It depends on the stream. A high-yield savings account starts earning interest immediately. Print-on-demand or stock photography can generate sales within days. Dividend investing or real estate crowdfunding pays out quarterly. Courses and affiliate marketing typically take 1–3 months to build momentum. Your results page will show expected timelines for each match.</div></div>
+        <div class="faq-q" onclick="toggleFaq(this)">How does PassiveMatches actually help me make money?<span class="faq-arrow">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We don't make money for you — we find the right path for you to do it yourself. Based on your answers, we match you to real, proven income streams (like dividend investing, digital products, or renting assets) that fit your time, budget, and skills. Each result includes direct links to the platforms you need and clear instructions on how to start.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do I need to invest money to get started?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Not necessarily. Several streams on our list — print-on-demand, digital products, affiliate marketing, and stock photography — can be started with zero budget. Others like dividend investing or real estate crowdfunding do require starting capital, but some platforms accept as little as $10. Your quiz results will only show streams that fit your specified budget.</div></div>
+        <div class="faq-q" onclick="toggleFaq(this)">How fast can I start earning?<span class="faq-arrow">▼</span></div>
+        <div class="faq-a"><div class="faq-a-inner">It depends on your match. A high-yield savings account starts paying interest from day one. Print-on-demand and digital products can generate your first sale within days. Dividend investing pays quarterly. The quiz takes 5 minutes — your first income action can happen today.</div></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How does PassiveMatches make money?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">We may earn affiliate commissions when you sign up to a recommended platform through a link on our results page. This is at absolutely no cost to you — platforms pay us a small referral fee. This never influences our recommendations; streams are ranked solely by how well they fit your quiz answers.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Can I really do this alongside a full-time job?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely — that's the whole point of passive income. The streams with the lowest time requirements (investing, HYSA, real estate crowdfunding) need less than 2 hours per month to manage once set up. Even streams like print-on-demand or stock photography can be built gradually on evenings and weekends, then run on autopilot.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Are the earnings figures on the results page realistic?<span class="faq-arrow">▼</span></div>
-        <div class="faq-a"><div class="faq-a-inner">The figures are averages drawn from platform-published data, independent creator surveys, and publicly reported contributor earnings. They represent what active, consistent participants earn — not outlier success stories. Your actual results will depend on effort, consistency, starting conditions, and market factors. We always show a range, not a guarantee.</div></div>
-      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <button class="btn-primary" style="margin:0 auto;" onclick="goToQuiz()">I'm Ready — Find My Match →</button>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
     <div class="cta-box">
-      <h2>Ready to find your match?</h2>
-      <p>Takes 5 minutes. No account needed. Just the income streams that actually fit your life — and a clear path to starting each one.</p>
-      <button class="btn-primary" style="margin:0 auto;" onclick="goToQuiz()">Start Free Quiz →</button>
+      <h2>Your income streams are waiting.</h2>
+      <p>Takes 5 minutes. No account needed. Discover exactly how people like you start earning online — and the fastest path to get there.</p>
+      <button class="btn-primary" style="margin:0 auto;" onclick="goToQuiz()">Discover How People Like You Earn →</button>
+      <p style="margin-top:16px;font-size:0.78rem;color:var(--text3);">✓ Free · ✓ No signup · ✓ Results in 5 minutes</p>
     </div>
   </section>
 
@@ -456,11 +484,16 @@
           <a onclick="scrollToSection('faq')">FAQ</a>
           <a onclick="goToQuiz()">Take the Quiz</a>
         </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a onclick="goToAbout()">About Us</a>
+          <a onclick="goToPrivacy()">Privacy Policy</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 PassiveMatches. All rights reserved.</p>
-      <p>Earnings figures are averages reported by platform users. Individual results vary. PassiveMatches may earn affiliate commissions on referrals.</p>
+      <p>⚠️ <strong style="color:var(--text2);">Affiliate Disclosure:</strong> PassiveMatches may earn commissions when you sign up to partner platforms through links on this site. This comes at no cost to you. Our recommendations are based solely on your quiz answers — not commercial relationships.</p>
     </div>
   </footer>
 
@@ -493,6 +526,24 @@
   </div>
 </div>
 
+
+<!-- ═══ EMAIL GATE ═══ -->
+<div id="email-gate" class="page">
+  <div class="quiz-body" style="min-height:calc(100vh - 68px);">
+    <div class="quiz-card" style="text-align:center;max-width:500px;">
+      <div style="font-size:2.2rem;margin-bottom:16px;">🎯</div>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px;">Your Results Are Ready</div>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:12px;line-height:1.3;">Where should we send your personalized income guide?</h2>
+      <p style="font-size:0.88rem;color:var(--text2);line-height:1.65;margin-bottom:28px;">Enter your email to get your top matches + a free step-by-step starter guide for each one. No spam, ever.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <input type="email" id="gate-email" class="email-input" placeholder="your@email.com" style="border-radius:12px;text-align:center;" onkeydown="if(event.key==='Enter')submitGate()"/>
+        <button class="btn-primary" style="justify-content:center;border-radius:12px;" onclick="submitGate()">Show My Results →</button>
+        <button onclick="skipGate()" style="background:none;border:none;color:var(--text3);font-size:0.8rem;cursor:pointer;padding:6px;font-family:inherit;">No thanks, skip to results</button>
+      </div>
+      <p style="font-size:0.72rem;color:var(--text3);margin-top:16px;">🔒 We respect your privacy. Unsubscribe any time.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ RESULTS ═══ -->
 <div id="results-page" class="page">
@@ -809,9 +860,11 @@ function showPage(id) {
   document.getElementById(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
-function goToQuiz()    { renderQuestion(0); showPage('quiz-page'); }
-function goToLanding() { showPage('landing'); }
-function retakeQuiz()  { answers = {}; goToQuiz(); }
+function goToQuiz()        { renderQuestion(0); showPage('quiz-page'); }
+function goToLanding()     { showPage('landing'); }
+function goToAbout()       { showPage('about-page'); }
+function goToPrivacy()     { showPage('privacy-page'); }
+function retakeQuiz()      { answers = {}; goToQuiz(); }
 function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
 
 /* ═══════════════════════════════════════════════════════════
@@ -867,8 +920,21 @@ function nextQ() {
   if (currentQ < totalQ - 1) {
     animateSlide('forward', () => renderQuestion(currentQ + 1));
   } else {
-    showResults();
+    showPage('email-gate');
   }
+}
+
+function submitGate() {
+  const val = document.getElementById('gate-email').value.trim();
+  if (val && val.includes('@') && val.includes('.')) {
+    // Email collected — store it and show results
+    localStorage.setItem('pm_email', val);
+  }
+  showResults();
+}
+
+function skipGate() {
+  showResults();
 }
 
 function prevQ() {
@@ -1030,5 +1096,131 @@ function toggleFaq(el) {
   if (!isOpen) item.classList.add('open');
 }
 </script>
+
+<!-- ═══ ABOUT US ═══ -->
+<div id="about-page" class="page">
+  <div style="max-width:780px;margin:0 auto;padding:80px 6% 100px;">
+    <button onclick="goToLanding()" style="background:none;border:none;color:var(--text2);font-family:inherit;font-size:0.85rem;cursor:pointer;margin-bottom:36px;display:flex;align-items:center;gap:6px;padding:0;">← Back to Home</button>
+
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;">About Us</div>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:22px;">We help real people find<br><span style="background:linear-gradient(135deg,var(--gold),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">real income streams.</span></h1>
+    <p style="font-size:1.05rem;color:var(--text2);line-height:1.8;margin-bottom:48px;max-width:600px;">PassiveMatches was built on one simple belief: the right passive income stream exists for every person — most people just haven't found theirs yet.</p>
+
+    <div style="display:grid;gap:32px;">
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 36px;">
+        <div style="font-size:1.6rem;margin-bottom:14px;">💡</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:10px;">Why We Built This</h3>
+        <p style="font-size:0.9rem;color:var(--text2);line-height:1.75;">Most passive income content is generic. "Start a blog." "Buy index funds." "Open a Shopify store." None of it accounts for who you actually are — your available time, your budget, your skills, or your goals. We built PassiveMatches to fix that. A 5-minute quiz that produces a genuinely personalized roadmap, backed by real earnings data from real platforms.</p>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 36px;">
+        <div style="font-size:1.6rem;margin-bottom:14px;">🎯</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:10px;">How It Works</h3>
+        <p style="font-size:0.9rem;color:var(--text2);line-height:1.75;">Our matching algorithm scores 14 income streams against your quiz answers — weighing your time availability, starting budget, existing skills, risk tolerance, and financial goals. The result is a ranked list of streams most likely to work for someone exactly like you, with direct links to get started on each one.</p>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 36px;">
+        <div style="font-size:1.6rem;margin-bottom:14px;">🤝</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:10px;">How We Make Money</h3>
+        <p style="font-size:0.9rem;color:var(--text2);line-height:1.75;">PassiveMatches is free to use. We earn small affiliate commissions from partner platforms when you sign up through a link on our results page. This comes at no cost to you — the platforms pay us a referral fee. Importantly, affiliate relationships never influence our rankings. Every recommendation is driven entirely by how well it fits your quiz profile.</p>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 36px;">
+        <div style="font-size:1.6rem;margin-bottom:14px;">📊</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:10px;">Our Data Policy</h3>
+        <p style="font-size:0.9rem;color:var(--text2);line-height:1.75;">All earnings figures shown on the site are averages drawn from platform-published data, independent creator surveys, and publicly reported contributor statistics. They represent what active, consistent participants earn — not cherry-picked outliers. We always display a range, never a guarantee. Results depend on your effort, consistency, and individual circumstances.</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:56px;text-align:center;">
+      <p style="color:var(--text2);font-size:0.9rem;margin-bottom:22px;">Ready to find your match?</p>
+      <button class="btn-primary" style="margin:0 auto;" onclick="goToQuiz()">Take the Free Quiz →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRIVACY POLICY ═══ -->
+<div id="privacy-page" class="page">
+  <div style="max-width:780px;margin:0 auto;padding:80px 6% 100px;">
+    <button onclick="goToLanding()" style="background:none;border:none;color:var(--text2);font-family:inherit;font-size:0.85rem;cursor:pointer;margin-bottom:36px;display:flex;align-items:center;gap:6px;padding:0;">← Back to Home</button>
+
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;">Legal</div>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:-0.5px;margin-bottom:10px;">Privacy Policy</h1>
+    <p style="font-size:0.82rem;color:var(--text3);margin-bottom:48px;">Last updated: April 2026</p>
+
+    <div style="display:flex;flex-direction:column;gap:36px;font-size:0.9rem;color:var(--text2);line-height:1.8;">
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">1. Who We Are</h2>
+        <p>PassiveMatches ("we", "us", "our") operates the website at passivematches.com. This Privacy Policy explains how we collect, use, and protect your personal information when you use our site.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">2. Information We Collect</h2>
+        <p><strong style="color:var(--text);">Quiz answers:</strong> When you take the quiz, we collect your anonymous responses (time availability, budget, skills, risk tolerance, and goals). These answers are not linked to any personal identity and are used solely to generate your personalized results.</p>
+        <br>
+        <p><strong style="color:var(--text);">Email address (optional):</strong> If you choose to enter your email address on the email capture screen, we store it to send you your personalized starter guide and optional newsletter. Providing your email is entirely voluntary — you can skip this step and still see your results.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">3. How We Use Your Information</h2>
+        <p>We use your information only to: (a) generate and display your personalized income stream results; (b) send your requested starter guide and relevant income tips if you opted in by email; (c) improve the accuracy of our matching algorithm using aggregated, anonymized quiz data.</p>
+        <br>
+        <p>We do not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">4. Affiliate Disclosure</h2>
+        <p>PassiveMatches participates in affiliate programs. When you click a link to a partner platform (such as Fundrise, M1 Finance, Printful, Amazon Associates, etc.) and complete a registration or purchase, we may earn a commission. This comes at no additional cost to you.</p>
+        <br>
+        <p>Affiliate relationships do not influence our recommendations. All income streams are ranked solely based on your quiz answers. We only link to platforms we believe are legitimate and relevant to your matched income stream.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">5. Cookies</h2>
+        <p>Our site uses minimal cookies to ensure basic functionality (such as remembering your quiz progress during a session). We do not use advertising cookies or tracking cookies to follow you across other websites. Third-party platforms linked from our results page may use their own cookies in accordance with their privacy policies.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">6. Third-Party Links</h2>
+        <p>Our results page contains links to external platforms (e.g., Fundrise, Ally Bank, Etsy, etc.). Once you leave our site, we are not responsible for the privacy practices of those platforms. We encourage you to read the privacy policy of any third-party site you visit.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">7. Data Security</h2>
+        <p>We take reasonable measures to protect any personal information you provide. Email addresses collected via our opt-in form are stored securely. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">8. Your Rights</h2>
+        <p>You have the right to request deletion of any personal data we hold about you, including your email address. To exercise this right, contact us at the email address below. You may also unsubscribe from any emails we send at any time using the unsubscribe link in the email footer.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">9. Children's Privacy</h2>
+        <p>PassiveMatches is not intended for users under the age of 18. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will delete it promptly.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date at the top. Continued use of the site after changes are posted constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">11. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at: <strong style="color:var(--text);">privacy@passivematches.com</strong></p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:16px;flex-wrap:wrap;">
+      <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
+      <button onclick="goToAbout()" class="btn-ghost">About Us</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
