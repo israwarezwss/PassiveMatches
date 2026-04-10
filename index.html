@@ -1229,6 +1229,18 @@ function toggleFaq(el) {
     </div>
   </div>
 </div>
-
+<script>
+document.addEventListener("click", function(e) {
+  if (e.target && e.target.innerText.includes("Get My Results")) {
+    setTimeout(function() {
+      const gate = document.getElementById("email-gate");
+      const results = document.getElementById("results-page");
+      if (gate) gate.style.display = "none";
+      if (results) results.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 2000);
+  }
+});
+</script>
 </body>
 </html>
