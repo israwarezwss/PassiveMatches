@@ -181,6 +181,9 @@
 
     /* ─── RESULTS ─── */
     #results-page { min-height: 100vh; }
+    #results-page.active { display: flex; flex-direction: column; }
+    #results-page .results-grid { flex: 1; }
+    #about-page.active, #privacy-page.active, #contact-page.active { display: flex; flex-direction: column; min-height: 100vh; }
     .results-hero { padding: 56px 6% 36px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.07) 0%, transparent 100%); }
     .results-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: var(--green); font-size: 0.78rem; font-weight: 600; padding: 5px 14px; border-radius: 50px; margin-bottom: 18px; }
     .results-hero h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 11px; }
@@ -497,11 +500,13 @@
           <h5>Company</h5>
           <a onclick="goToAbout()">About Us</a>
           <a onclick="goToPrivacy()">Privacy Policy</a>
+          <a onclick="goToContact()">Contact</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 PassiveMatches. All rights reserved.</p>
+      <p>This site may earn commissions from partner links at no extra cost to you.</p>
       <p>⚠️ <strong style="color:var(--text2);">Affiliate Disclosure:</strong> PassiveMatches may earn commissions when you sign up to partner platforms through links on this site. This comes at no cost to you. Our recommendations are based solely on your quiz answers — not commercial relationships.</p>
     </div>
   </footer>
@@ -875,6 +880,7 @@ function goToQuiz()        { renderQuestion(0); showPage('quiz-page'); }
 function goToLanding()     { showPage('landing'); }
 function goToAbout()       { showPage('about-page'); }
 function goToPrivacy()     { showPage('privacy-page'); }
+function goToContact()     { showPage('contact-page'); }
 function retakeQuiz()      { answers = {}; goToQuiz(); }
 function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
 
@@ -1245,5 +1251,30 @@ document.addEventListener("click", function(e) {
   }
 });
 </script>
+
+<!-- ═══ CONTACT ═══ -->
+<div id="contact-page" class="page">
+  <div style="max-width:620px;margin:0 auto;padding:80px 6% 100px;flex:1;">
+    <button onclick="goToLanding()" style="background:none;border:none;color:var(--text2);font-family:inherit;font-size:0.85rem;cursor:pointer;margin-bottom:36px;display:flex;align-items:center;gap:6px;padding:0;">← Back to Home</button>
+
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;">Get In Touch</div>
+    <h1 style="font-size:clamp(2rem,5vw,2.8rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:22px;">Contact Us</h1>
+
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px 36px;text-align:center;">
+      <div style="font-size:2.4rem;margin-bottom:20px;">✉️</div>
+      <p style="font-size:1rem;color:var(--text2);line-height:1.75;margin-bottom:10px;">Have questions or feedback?</p>
+      <p style="font-size:1rem;color:var(--text2);line-height:1.75;margin-bottom:24px;">Contact us at:</p>
+      <a href="mailto:passivematches@gmail.com" style="font-size:1.15rem;font-weight:700;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(240,180,41,0.3);padding-bottom:2px;">passivematches@gmail.com</a>
+      <p style="font-size:0.85rem;color:var(--text3);margin-top:22px;">We usually respond within 24 hours.</p>
+    </div>
+
+    <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
+      <button onclick="goToAbout()" class="btn-ghost">About Us</button>
+      <button onclick="goToPrivacy()" class="btn-ghost">Privacy Policy</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
