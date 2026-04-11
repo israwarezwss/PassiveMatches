@@ -1022,7 +1022,27 @@ function goToAbout()       { window.location.href = '/about'; }
 function goToPrivacy()     { window.location.href = '/privacy'; }
 function goToContact()     { showPage('contact-page'); }
 function retakeQuiz()      { answers = {}; goToQuiz(); }
-function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
+function scrollToSection(id) {
+  const landing = document.getElementById('landing');
+  const onLanding = landing.classList.contains('active');
+
+  if (onLanding) {
+    // Already on landing — just scroll
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    // Off landing (quiz, results, email-gate, etc.)
+    // Switch pages WITHOUT the scroll-to-top so we can target the section directly
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    landing.classList.add('active');
+    // Wait two animation frames so the browser has painted the visible layout
+    // before we call scrollIntoView — avoids a scroll-to-top flash
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+}
 
 // Deep-link: auto-launch quiz when URL contains #start-quiz
 // Used by external pages (about, privacy, contact) CTA buttons
