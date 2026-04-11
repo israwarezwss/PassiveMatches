@@ -1024,6 +1024,16 @@ function goToContact()     { showPage('contact-page'); }
 function retakeQuiz()      { answers = {}; goToQuiz(); }
 function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
 
+// Deep-link: auto-launch quiz when URL contains #start-quiz
+// Used by external pages (about, privacy, contact) CTA buttons
+if (window.location.hash === '#start-quiz') {
+  window.addEventListener('DOMContentLoaded', function () {
+    goToQuiz();
+    // Clean the hash from the URL without a page reload
+    history.replaceState(null, '', window.location.pathname);
+  });
+}
+
 /* ═══════════════════════════════════════════════════════════
    QUIZ
 ═══════════════════════════════════════════════════════════ */
