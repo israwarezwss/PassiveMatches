@@ -225,6 +225,67 @@
     .result-cta.secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid var(--border); }
     .result-cta.secondary:hover { box-shadow: none; background: rgba(255,255,255,0.08); }
 
+    /* ─── 4-Card Recommendation Section ─── */
+    .rec-cards-section { max-width: 1100px; margin: 0 auto; padding: 8px 6% 48px; }
+    .rec-cards-intro { text-align: center; margin-bottom: 22px; }
+    .rec-cards-intro span {
+      display: inline-block;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.22);
+      border-radius: 50px;
+      padding: 7px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent2);
+      letter-spacing: 0.2px;
+    }
+    .rec-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .rec-card {
+      background: var(--navy2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      cursor: pointer;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rec-card:hover { transform: translateY(-4px); }
+    .rec-card.rc-accent:hover { border-color: rgba(99,102,241,0.45); box-shadow: 0 22px 48px rgba(99,102,241,0.16); }
+    .rec-card.rc-gold:hover   { border-color: rgba(240,180,41,0.4);   box-shadow: 0 22px 48px rgba(240,180,41,0.12); }
+    .rec-card.rc-green:hover  { border-color: rgba(16,185,129,0.4);   box-shadow: 0 22px 48px rgba(16,185,129,0.12); }
+    .rec-card.rc-orange:hover { border-color: rgba(251,146,60,0.4);   box-shadow: 0 22px 48px rgba(251,146,60,0.12); }
+    .rc-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .rc-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; flex-shrink: 0; }
+    .rc-badge { font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; white-space: nowrap; text-align: right; }
+    .rc-badge.b-accent { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.28); color: var(--accent2); }
+    .rc-badge.b-gold   { background: rgba(240,180,41,0.13);  border: 1px solid rgba(240,180,41,0.28);  color: var(--gold); }
+    .rc-badge.b-green  { background: rgba(16,185,129,0.12);  border: 1px solid rgba(16,185,129,0.25);  color: var(--green); }
+    .rc-badge.b-orange { background: rgba(251,146,60,0.12);  border: 1px solid rgba(251,146,60,0.25);  color: #fb923c; }
+    .rc-title { font-size: 0.97rem; font-weight: 700; color: var(--text); line-height: 1.35; }
+    .rc-sub   { font-size: 0.82rem; color: var(--text2); line-height: 1.62; flex: 1; }
+    .rc-extras { font-size: 0.73rem; color: var(--text3); }
+    .rc-btn {
+      width: 100%; padding: 12px 14px; border-radius: 11px; border: none;
+      cursor: pointer; font-family: inherit; font-size: 0.85rem; font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s; margin-top: auto;
+    }
+    .rc-btn:hover { transform: translateY(-1px); }
+    .rc-btn.btn-accent { background: linear-gradient(135deg, var(--accent), #4f46e5); color: #fff; }
+    .rc-btn.btn-accent:hover { box-shadow: 0 8px 22px rgba(99,102,241,0.42); }
+    .rc-btn.btn-gold   { background: linear-gradient(135deg, var(--gold), #d4910e);  color: #0b1120; }
+    .rc-btn.btn-gold:hover   { box-shadow: 0 8px 22px rgba(240,180,41,0.4); }
+    .rc-btn.btn-green  { background: linear-gradient(135deg, var(--green), #059669); color: #fff; }
+    .rc-btn.btn-green:hover  { box-shadow: 0 8px 22px rgba(16,185,129,0.4); }
+    .rc-btn.btn-orange { background: linear-gradient(135deg, #fb923c, #ea580c); color: #fff; }
+    .rc-btn.btn-orange:hover { box-shadow: 0 8px 22px rgba(251,146,60,0.4); }
+    @media(max-width: 560px) { .rec-cards-grid { grid-template-columns: 1fr; } }
+
     /* email capture */
     .email-section { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(240,180,41,0.05)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 6%; text-align: center; }
     .email-section h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 10px; }
@@ -568,6 +629,85 @@
   </div>
 
   <div class="results-grid" id="results-grid"></div>
+
+  <!-- ═══ 4-CARD RECOMMENDATIONS ═══ -->
+  <div class="rec-cards-section">
+    <div class="rec-cards-intro">
+      <span>💡 Based on your answers, these are the best next steps for you</span>
+    </div>
+    <div class="rec-cards-grid">
+
+      <!-- Card 1: Smart Money Management -->
+      <div class="rec-card rc-accent" role="link" tabindex="0"
+           onclick="window.open('https://www.digital-planning-studio.com/#aff=supportd7dc','_blank','noopener')"
+           onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://www.digital-planning-studio.com/#aff=supportd7dc','_blank','noopener')">
+        <div class="rc-header">
+          <div class="rc-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(99,102,241,0.1))">💰</div>
+          <span class="rc-badge b-accent">Recommended for you</span>
+        </div>
+        <div class="rc-title">Smart Money Management</div>
+        <div class="rc-sub">Take control of your finances with a simple system that actually works.</div>
+        <div class="rc-extras">Beginner friendly · Simple system</div>
+        <button class="rc-btn btn-accent"
+          onclick="event.stopPropagation();window.open('https://www.digital-planning-studio.com/#aff=supportd7dc','_blank','noopener')">
+          Start Managing Money →
+        </button>
+      </div>
+
+      <!-- Card 2: Build Real Cashflow -->
+      <div class="rec-card rc-gold" role="link" tabindex="0"
+           onclick="window.open('https://www.digistore24.com/redir/489118/supportd7dc/','_blank','noopener')"
+           onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://www.digistore24.com/redir/489118/supportd7dc/','_blank','noopener')">
+        <div class="rc-header">
+          <div class="rc-icon" style="background:linear-gradient(135deg,rgba(240,180,41,0.28),rgba(240,180,41,0.1))">📈</div>
+          <span class="rc-badge b-gold">Strong income potential</span>
+        </div>
+        <div class="rc-title">Build Real Cashflow</div>
+        <div class="rc-sub">Learn how to create consistent income streams and stop living paycheck to paycheck.</div>
+        <div class="rc-extras">Proven strategies · Long-term income</div>
+        <button class="rc-btn btn-gold"
+          onclick="event.stopPropagation();window.open('https://www.digistore24.com/redir/489118/supportd7dc/','_blank','noopener')">
+          See How It Works →
+        </button>
+      </div>
+
+      <!-- Card 3: Print-on-Demand -->
+      <div class="rec-card rc-green" role="link" tabindex="0"
+           onclick="window.open('https://www.checkout-ds24.com/redir/606273/supportd7dc/','_blank','noopener')"
+           onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://www.checkout-ds24.com/redir/606273/supportd7dc/','_blank','noopener')">
+        <div class="rc-header">
+          <div class="rc-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.28),rgba(16,185,129,0.1))">🛍️</div>
+          <span class="rc-badge b-green">Beginner friendly</span>
+        </div>
+        <div class="rc-title">Start a Print-on-Demand Business</div>
+        <div class="rc-sub">Launch your own online store with zero inventory and start selling today.</div>
+        <div class="rc-extras">No experience needed · Start today</div>
+        <button class="rc-btn btn-green"
+          onclick="event.stopPropagation();window.open('https://www.checkout-ds24.com/redir/606273/supportd7dc/','_blank','noopener')">
+          Get Started Now →
+        </button>
+      </div>
+
+      <!-- Card 4: Etsy Business -->
+      <div class="rec-card rc-orange" role="link" tabindex="0"
+           onclick="window.open('https://www.digistore24.com/redir/538173/supportd7dc/','_blank','noopener')"
+           onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://www.digistore24.com/redir/538173/supportd7dc/','_blank','noopener')">
+        <div class="rc-header">
+          <div class="rc-icon" style="background:linear-gradient(135deg,rgba(251,146,60,0.28),rgba(251,146,60,0.1))">🏪</div>
+          <span class="rc-badge b-orange">Low startup cost</span>
+        </div>
+        <div class="rc-title">Start an Etsy Business</div>
+        <div class="rc-sub">Sell handmade or digital products and build your own online shop.</div>
+        <div class="rc-extras">Beginner friendly · Low startup cost</div>
+        <button class="rc-btn btn-orange"
+          onclick="event.stopPropagation();window.open('https://www.digistore24.com/redir/538173/supportd7dc/','_blank','noopener')">
+          Start Selling on Etsy →
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ═══ / 4-CARD RECOMMENDATIONS ═══ -->
 
   <div class="email-section">
     <h3>Get Your Full Starter Guide</h3>
