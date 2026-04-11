@@ -559,9 +559,9 @@
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a href="about.html">About Us</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="contact.html">Contact</a>
+          <a href="/about">About Us</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/contact">Contact</a>
         </div>
       </div>
     </div>
@@ -1018,8 +1018,8 @@ function showPage(id) {
 }
 function goToQuiz()        { renderQuestion(0); showPage('quiz-page'); }
 function goToLanding()     { showPage('landing'); }
-function goToAbout()       { window.location.href = 'about.html'; }
-function goToPrivacy()     { window.location.href = 'privacy.html'; }
+function goToAbout()       { window.location.href = '/about'; }
+function goToPrivacy()     { window.location.href = '/privacy'; }
 function goToContact()     { showPage('contact-page'); }
 function retakeQuiz()      { answers = {}; goToQuiz(); }
 function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
@@ -1384,7 +1384,7 @@ function toggleFaq(el) {
 
     <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:16px;flex-wrap:wrap;">
       <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
-      <a href="about.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
+      <a href="/about" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
     </div>
   </div>
 </div>
@@ -1420,8 +1420,8 @@ document.addEventListener("click", function(e) {
 
     <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
-      <a href="about.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
-      <a href="privacy.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">Privacy Policy</a>
+      <a href="/about" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
+      <a href="/privacy" class="btn-ghost" style="text-decoration:none;display:inline-block;">Privacy Policy</a>
     </div>
   </div>
 </div>
