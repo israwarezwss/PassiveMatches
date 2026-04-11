@@ -559,8 +559,8 @@
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a onclick="goToAbout()">About Us</a>
-          <a onclick="goToPrivacy()">Privacy Policy</a>
+          <a href="about.html">About Us</a>
+          <a href="privacy.html">Privacy Policy</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -1018,8 +1018,8 @@ function showPage(id) {
 }
 function goToQuiz()        { renderQuestion(0); showPage('quiz-page'); }
 function goToLanding()     { showPage('landing'); }
-function goToAbout()       { showPage('about-page'); }
-function goToPrivacy()     { showPage('privacy-page'); }
+function goToAbout()       { window.location.href = 'about.html'; }
+function goToPrivacy()     { window.location.href = 'privacy.html'; }
 function goToContact()     { showPage('contact-page'); }
 function retakeQuiz()      { answers = {}; goToQuiz(); }
 function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
@@ -1367,14 +1367,14 @@ function toggleFaq(el) {
 
       <div>
         <h2 style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;">11. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at: <strong style="color:var(--text);">privacy@passivematches.com</strong></p>
+        <p>If you have any questions about this Privacy Policy, please contact us at: <strong style="color:var(--text);">support@passivematches.com</strong></p>
       </div>
 
     </div>
 
     <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:16px;flex-wrap:wrap;">
       <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
-      <button onclick="goToAbout()" class="btn-ghost">About Us</button>
+      <a href="about.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
     </div>
   </div>
 </div>
@@ -1410,8 +1410,8 @@ document.addEventListener("click", function(e) {
 
     <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="goToLanding()" class="btn-ghost">← Back to Home</button>
-      <button onclick="goToAbout()" class="btn-ghost">About Us</button>
-      <button onclick="goToPrivacy()" class="btn-ghost">Privacy Policy</button>
+      <a href="about.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">About Us</a>
+      <a href="privacy.html" class="btn-ghost" style="text-decoration:none;display:inline-block;">Privacy Policy</a>
     </div>
   </div>
 </div>
